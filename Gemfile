@@ -5,6 +5,7 @@ ruby '2.5.5'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'simple_form', '~> 4.0'
+gem 'devise', '~> 4.7', '>= 4.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
@@ -27,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
