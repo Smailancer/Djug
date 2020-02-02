@@ -5,6 +5,11 @@
 
   <div class="form-inputs">
     <%= f.input :username, label: 'اسم المستخدم', required: true, autofocus: true %>
+    <%= f.input :age %>
+    <%= f.input :gender %>
+    <%= f.input :bio %>
+
+
     <%= f.input :email, label: 'البريد الالكتروني', required: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

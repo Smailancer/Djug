@@ -6,11 +6,11 @@
         <div class="jumbotron-fluid">
             <h1 class="display-3"><%= @user.username %></h1>
             <p class="lead">  المتابِعون: X | المتَابعون: Y</p>
-            <p> العمر </p>
-            <p> الجنس </p>
+            <p> العمر: <%= @user.age %> </p>
+            <p> الجنس: <%= @user.gender %> </p>
             <hr class="my-3">
             <h1 class="lead">عن نفسي! </h1>
-            <p class="lead">------</p>
+            <p class="lead"><%= @user.bio %></p>
 
         </div>
     </div>
