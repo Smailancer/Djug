@@ -1,13 +1,13 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>تعديل <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :username, label: 'اسم المستخدم', required: true, autofocus: true %>
-    <%= f.input :age %>
-    <%= f.input :gender %>
-    <%= f.input :bio %>
+    <%= f.input :age, label: 'العمر' %>
+    <%= f.input :gender, label: 'الجنس' %>
+    <%= f.input :bio, label: 'النبذة الشخصية' %>
 
 
     <%= f.input :email, label: 'البريد الالكتروني', required: true %>
@@ -16,26 +16,26 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+    <%= f.input :password,label: ' كلمة المرور',
+                hint: "اتركه فارغا إذا لم ترغب في تغيره ",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                hint: "نحتاج كلمة المرور الحالية لتأكيد التغييرات التي قمت بها ",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "تحديث" %>
   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>غير سعيد ؟ <%= link_to "قم بإلغاء حسابي", registration_path(resource_name), data: { confirm: "هل أنت متأكد ؟" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "العودة", :back %>
