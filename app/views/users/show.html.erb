@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-3">
+        <%= gravatar_tag @user.email, size: 500, :html => { :class => 'img-fluid'} %>
+    </div>
+    <div class='col'>
+        <div class="jumbotron-fluid">
+            <h1 class="display-3"><%= @user.username %></h1>
+            <p class="lead">  المتابِعون: X | المتَابعون: Y</p>
+            <p> العمر </p>
+            <p> الجنس </p>
+            <hr class="my-3">
+            <h1 class="lead">عن نفسي! </h1>
+            <p class="lead">------</p>
+
+        </div>
+    </div>
+</div>

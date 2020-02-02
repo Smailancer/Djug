@@ -14,7 +14,7 @@
           </a>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">الصفحة الشخصية </a>
+            <%= link_to 'الصفحة الشخصية', user_path(current_user.username), class: 'dropdown-item' %>
             <%= link_to 'الاعدادات', edit_user_registration_path, class: 'dropdown-item'  %>
             <div class="dropdown-divider"></div>
             <%= link_to 'تسجيل الخروج', destroy_user_session_path, method: :delete, class: 'dropdown-item'  %>
