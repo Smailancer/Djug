@@ -8,7 +8,7 @@ gem 'simple_form', '~> 4.0'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'gravatarify', '~> 3.1', '>= 3.1.1'
-
+gem 'public_activity', '~> 1.6', '>= 1.6.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
