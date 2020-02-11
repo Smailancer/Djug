@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: { registrations: 'registrations' }
   root 'pages#timeline'
 
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   get 'tweeters', to: 'users#index'
 
   resources :relationships, only: [:create, :destroy]
+
+  resources :tweet, only: [:create, :edit, :update, :destroy]
 
   get 'pages/timeline'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
