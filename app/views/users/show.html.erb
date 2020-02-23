@@ -13,6 +13,7 @@
             <p class="lead">  المتابِعون: X | المتَابعون: Y</p>
             <p class="lead">
                 <%= link_to 'المتابعون', followers_user_path(@user.username) %> <%= @user.followers.count %>
+                |
                 <%= link_to 'المتابعون', following_user_path(@user.username) %> <%= @user.following.count %>
             </p>
             <p> العمر: <%= @user.age %> </p>
@@ -31,11 +32,11 @@
     <div class="container">
         <div class="row">
             <div class="col-8">
-                <% if user_signed_in? && current_user == @user %>
-                    <%= render 'tweets/form' %>
-                <%end%>
-                <% render @tweets %>
-            </div>
+                  <% if user_signed_in? && current_user == @user %>
+          <%= render 'tweets/form' %>
+        <% end %>
+        <%= render @tweets %>
+      </div>
 
             <div class="col-4">
                 <div class="card">

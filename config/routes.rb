@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
 
-  resources :tweet, only: [:create, :edit, :update, :destroy]
+  resources :tweets, only: [:create, :edit, :update, :destroy]
 
   get 'pages/timeline'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
