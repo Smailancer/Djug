@@ -1,9 +1,13 @@
 class Tweet < ApplicationRecord
     include PublicActivity::Model 
 
+    acts_as_votable:migration
+
     belongs_to :user 
 
     validates_presence_of :content 
+    validates_length_of :content, maximum: 140
+   
 
     FORMAT = AutoHtml::Pipeline.new(
         AutoHtml::HtmlEscape.new,

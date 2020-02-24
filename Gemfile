@@ -10,6 +10,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'gravatarify', '~> 3.1', '>= 3.1.1'
 gem 'public_activity', '~> 1.6', '>= 1.6.4'
 gem 'auto_html', '~> 2.0'
+gem 'acts_as_votable', '~> 0.12.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
@@ -32,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt'
+gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
