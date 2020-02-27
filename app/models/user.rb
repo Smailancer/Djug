@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  acts_as_voter 
+acts_as_voter 
  
 validates_presence_of :username
 validates_uniqueness_of :username     
@@ -16,7 +16,7 @@ has_many :passive_relationships, class_name: 'Relationship', foreign_key: 'follo
 has_many :followers, through: :passive_relationships, source: :follower
 
 has_many :tweets, dependent: :destroy 
-
+has_many :comments, dependent: :destroy
 def follow(user)
   active_relationships.create(followed_id: user.id)
 end

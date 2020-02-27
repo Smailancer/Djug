@@ -11,6 +11,7 @@ gem 'gravatarify', '~> 3.1', '>= 3.1.1'
 gem 'public_activity', '~> 1.6', '>= 1.6.4'
 gem 'auto_html', '~> 2.0'
 gem 'acts_as_votable', '~> 0.12.1'
+gem 'acts_as_commentable'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'

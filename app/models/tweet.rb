@@ -1,7 +1,8 @@
 class Tweet < ApplicationRecord
     include PublicActivity::Model 
 
-    acts_as_votable:migration
+    acts_as_votable
+    acts_as_commentable
 
     belongs_to :user 
 

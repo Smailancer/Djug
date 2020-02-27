@@ -23,6 +23,11 @@
                   <% case activity.trackable_type when 'Tweet' %>
                     <% case activity.key when 'tweet.created' %>
                   	  <p><%= raw(activity.trackable.content_html) %></p>
+                      <%= render 'tweets/like_and_dislike_buttons', tweet: activity.trackable %>
+                    <% when 'tweet.liked' %>
+                      <p><%= link_to activity.owner.username, user_path(activity.owner.username) %>  أعجبته التغريدة </p>
+                    <<% when 'tweet.liked' %>
+                      <p><%= link_to activity.owner.username, user_path(activity.owner.username) %>  لم تعجبه التغريدة </p>
                     <% end %>
                 	<% when 'Relationship' %>
                 	  <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> تابع <%= link_to activity.recipient.username, user_path(activity.recipient.username) %></p>
