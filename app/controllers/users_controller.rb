@@ -18,7 +18,8 @@ end
 
   def show
     @tweet = Tweet.new
-    @tweets = @user.tweets.order(created_at: :desc)
+    @tweets = @user.retweet + @user.tweets
+    @tweets.sort_by!(&:created_at).reverse! 
     @activities = PublicActivity::Activity.where(owner: @user) + PublicActivity::Activity.where(recipient: @user)
     @activities.uniq!
     @activities.sort_by!(&:created_at).reverse!
