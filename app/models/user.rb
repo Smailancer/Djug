@@ -17,6 +17,8 @@ has_many :followers, through: :passive_relationships, source: :follower
 
 has_many :tweets, dependent: :destroy 
 has_many :comments, dependent: :destroy
+
+has_many :retweets, dependent: :destroy, foreign_key: 'retweeter_id'
 def follow(user)
   active_relationships.create(followed_id: user.id)
 end

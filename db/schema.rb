@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_084345) do
+ActiveRecord::Schema.define(version: 2020_03_11_105234) do
 
   create_table "activities", force: :cascade do |t|
     t.string "trackable_type"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(version: 2020_02_27_084345) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "retweets", force: :cascade do |t|
+    t.integer "retweeter_id"
+    t.integer "source_tweet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["retweeter_id", "source_tweet_id"], name: "index_retweets_on_retweeter_id_and_source_tweet_id", unique: true
+    t.index ["retweeter_id"], name: "index_retweets_on_retweeter_id"
+    t.index ["source_tweet_id"], name: "index_retweets_on_source_tweet_id"
   end
 
   create_table "tweets", force: :cascade do |t|
