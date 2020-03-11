@@ -32,6 +32,9 @@
                 	<% when 'Relationship' %>
                 	  <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> تابع <%= link_to activity.recipient.username, user_path(activity.recipient.username) %></p>
                  	<% end %>
+                  <% when 'Comment'%>
+                    <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> رد على تغريدة </p>
+                  <% end %>
                 </div>
               </div>
             </article>
