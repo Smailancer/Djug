@@ -6,7 +6,7 @@ class Tweet < ApplicationRecord
 
     belongs_to :user 
 
-    has_many :retweets, dependent: foreign_key: 'source_tweet_id'
+    has_many :retweets, dependent: :destroy, foreign_key: 'source_tweet_id'
 
     validates_presence_of :content 
     validates_length_of :content, maximum: 140
