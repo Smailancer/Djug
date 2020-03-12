@@ -24,7 +24,7 @@
                     <% case activity.key when 'tweet.created' %>
                   	  <p><%= raw(activity.trackable.content_html) %></p>
                       <%= render 'tweets/like_and_dislike_buttons', tweet: activity.trackable %>
-                      <%= render 'tweets/retweet_button', tweet: activity.trackable if user_signed_in && activity.trackable.user_id != current_user.id %>
+                      <%= render 'tweets/retweet_button', tweet: activity.trackable if user_signed_in? && activity.trackable.user_id != current_user.id %>
                       <hr>
                       <%= render 'comments/form', tweet: activity.trackable %>
                       <br>
@@ -33,8 +33,11 @@
                       </div>
                     <% when 'tweet.liked' %>
                       <p><%= link_to activity.owner.username, user_path(activity.owner.username) %>  أعجبته التغريدة </p>
-                    <<% when 'tweet.liked' %>
+                    <<% when 'tweet.disliked' %>
                       <p><%= link_to activity.owner.username, user_path(activity.owner.username) %>  لم تعجبه التغريدة </p>
+                    <% end %>
+                    <% when 'tweet.mention' %>
+                      <p>ذكر<%= link_to activity.recipient.username, user_path(activity.recipient.username) %>  في تغريدة </p>
                     <% end %>
                     <% when 'Relationship' %>
                       <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> تابع <%= link_to activity.recipient.username, user_path(activity.recipient.username) %></p>
