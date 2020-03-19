@@ -129,6 +129,7 @@ GEM
     nokogiri (1.10.7-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pg (1.2.3-x64-mingw32)
     popper_js (1.16.0)
     public_activity (1.6.4)
       actionpack (>= 3.0.0)
@@ -254,6 +255,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-atwho-rails (~> 1.5, >= 1.5.4)
   jquery-rails (~> 4.3, >= 4.3.5)
+  pg
   public_activity (~> 1.6, >= 1.6.4)
   puma (~> 3.11)
   rails (~> 5.2.4)

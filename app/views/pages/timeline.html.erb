@@ -35,19 +35,16 @@
                       <p><%= link_to activity.owner.username, user_path(activity.owner.username) %>  أعجبته التغريدة </p>
                     <<% when 'tweet.disliked' %>
                       <p><%= link_to activity.owner.username, user_path(activity.owner.username) %>  لم تعجبه التغريدة </p>
-                    <% end %>
                     <% when 'tweet.mention' %>
                       <p>ذكر<%= link_to activity.recipient.username, user_path(activity.recipient.username) %>  في تغريدة </p>
                     <% end %>
                     <% when 'Relationship' %>
-                      <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> تابع <%= link_to activity.recipient.username, user_path(activity.recipient.username) %></p>
-                    <% end %>
-                      <% when 'Comment'%>
-                      <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> رد على تغريدة </p>
-                    <% end %>
-                    <% when 'Retweet' %>
-                      <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> قام بإعادة التغريد </p>
-                    <% end %>
+                	  <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> تابع <%= link_to activity.recipient.username, user_path(activity.recipient.username) %></p>
+                  <% when 'Comment' %>
+                    <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> رد على تغريدة</p>
+                  <% when 'Retweet' %>
+                    <p><%= link_to activity.owner.username, user_path(activity.owner.username) %> قام بإعادة التغريد</p>
+                	<% end %>
                 </div>
               </div>
             </article>
@@ -57,3 +54,4 @@
     </div>
   </div>
 </div>
+

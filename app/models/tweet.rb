@@ -28,6 +28,7 @@ class Tweet < ApplicationRecord
     def resolve_mentions
         mentions = content_html.scan(/@\w+/)
         mentions.uniq.map do |match|
+            mention = find_mention(match)
             next unless mention
             update_attributes!(content_html: replace_mention_with_url(mention, content_html))
             create_activity key: 'tweet.mention',owner: user, recipient: mention 
@@ -40,9 +41,8 @@ class Tweet < ApplicationRecord
     end
 
     def replace_mention_with_url(mention, content)
-        content.gsub(/@#{mention.usrname})/,
-                    "<a href='#{Rails.application.routes.url_helpers.user_path(mention.username)}'target='_blank'>@#{mention.usrname}</a> ")
-
+        content.gsub(/@#{mention.username}/,
+                    "<a href='#{Rails.application.routes.url_helpers.user_path(mention.username)}'target='_blank'>@#{mention.username}</a> ")
     end
 
 end

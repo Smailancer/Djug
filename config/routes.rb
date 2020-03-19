@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   resources :retweets, only: [:create, :destroy]
 
+  post :notifications, to: 'notifications#mark_all_read'
+
   get 'pages/timeline'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
